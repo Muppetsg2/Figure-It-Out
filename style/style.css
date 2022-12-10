@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap');
+
+.scoreTxt {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    fill: #951A38;
+    font-size: 316px;
+}
+
+#game_board {
+    clip-path: url(#mask);
+}
+
+.moving_block {
+    fill: white;
+}
+
+#rect_moving {
+    /* stroke: #2F2F2F; */
+    stroke: #5F5F5F;
+    stroke-width: 10px;
+}
+
+.destructable_mark {
+    stroke: #FF7F9F;
+    stroke-width: 12px;
+}
+
+#player {
+    fill: white;
+}
+
+.border {
+    stroke: white;
+    stroke-width: 10px;
+}
+
+.background {
+    fill: #CA224B;
+}
+
+.hidden {
+    stroke-width: 0px;
+    stroke-opacity: 0;
+    fill-opacity: 0;
+}
+
+#buttonTxt {
+    fill: #951A38;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 64px;
+}
+
+#buttonImg {
+    fill: #951A38;
+}
+
+#buttonBg {
+    fill: #D9D9D9;
+}
+
+#titleTxt {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    fill: white;
+    font-size: 150px;
+}
+
+#infoTxt {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    fill: white;
+    font-size: 64px;
+}
+
+#overTxt {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    fill: white;
+    font-size: 220px;
+}
+
+#score_overTxt {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    fill: white;
+    font-size: 64px;
+}
+
+#restartTxt {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    fill: white;
+    font-size: 36px;
+}
+
+#over_bg {
+    fill: #1E1E1E;
+    fill-opacity: 0.6;
+}
+
+#startTxt {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    fill: white;
+    font-size: 64px;
+}
+
+#startTxt text {
+    animation-name: wiggleWiggle;
+    animation-duration: 1.25s;
+    animation-direction: alternate;
+    animation-timing-function: steps(2, end);
+    animation-iteration-count: infinite;
+}
+
+#P_1 {
+    animation-delay: 0s;
+}
+
+#R_1 {
+    animation-delay: 0.05s;
+}
+
+#E_1 {
+    animation-delay: 0.1s;
+}
+
+#S_1 {
+    animation-delay: 0.15s;
+}
+
+#S_2 {
+    animation-delay: 0.2s;
+}
+
+#SPACE_1 {
+    animation-delay: 0.25s;
+}
+
+#COL_1 {
+    animation-delay: 0.3s;
+}
+
+#S_3 {
+    animation-delay: 0.35s;
+}
+
+#P_2 {
+    animation-delay: 0.4s;
+}
+
+#A_1 {
+    animation-delay: 0.45s;
+}
+
+#C {
+    animation-delay: 0.5s;
+}
+
+#E_2 {
+    animation-delay: 0.55s;
+}
+
+#COL_2 {
+    animation-delay: 0.6s;
+}
+
+#SPCAE_2 {
+    animation-delay: 0.65s;
+}
+
+#T_1 {
+    animation-delay: 0.7s;
+}
+
+#O {
+    animation-delay: 0.75s;
+}
+
+#SPACE_3 {
+    animation-delay: 0.8s;
+}
+
+#S_4 {
+    animation-delay: 0.85s;
+}
+
+#T_2 {
+    animation-delay: 0.9s;
+}
+
+#A_2 {
+    animation-delay: 0.95s;
+}
+
+#R_2 {
+    animation-delay: 1.0s;
+}
+
+#T_3 {
+    animation-delay: 1.05s;
+}
+
+@keyframes wiggleWiggle {
+    20%,
+    100% {
+        transform: translate(0, 0px);
+    }
+
+    0% {
+        transform: translate(0, -10px);
+    }
+    10% {
+        transform: translate(0, 0px);
+    }
+}

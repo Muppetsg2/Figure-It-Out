@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet href="style/style.css" type="text/css"?>
+
+<svg version="1.1" width="100%" height="100%" viewBox="0 0 996 1476" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <g id="screen" filter="url(#filter0_d_2_3)">
+        <!--BACKGROUND-->
+        <rect class="background" x="18" y="10" width="960" height="1440"/>
+
+        <!--SCORE TEXT-->
+        <text class="scoreTxt" x="50%" y="50%" text-anchor="middle" dominant-baseline="central" filter="url(#filter1_i_2_3)">12</text>
+
+        <g id="start_screen">
+            <g filter="url(#filter3_d_14_3)">
+                <text x="50%" y="210" id="titleTxt" text-anchor="middle" dominant-baseline="central">FIGURE IT<tspan x="50%" dy="1.2em" text-anchor="middle">OUT</tspan></text>
+            </g>
+
+            <!-- <g filter="url(#filter2_d_14_3)">
+                <text id="startTxt" x="50%" y="50%" text-anchor="middle" dominant-baseline="central">PRESS `SPACE` TO START</text>
+            </g> -->
+
+            <g filter="url(#filter2_d_14_3)">
+                <g id="startTxt" transform="translate(498, 738)">
+                    <text x="-393" y="0" text-anchor="middle" dominant-baseline="central" id="P_1">P</text>
+                    <text x="-352" y="0" text-anchor="middle" dominant-baseline="central" id="R_1">R</text>
+                    <text x="-311" y="0" text-anchor="middle" dominant-baseline="central" id="E_1">E</text>
+                    <text x="-270" y="0" text-anchor="middle" dominant-baseline="central" id="S_1">S</text>
+                    <text x="-229" y="0" text-anchor="middle" dominant-baseline="central" id="S_2">S </text>
+                    <text x="-177" y="0" text-anchor="middle" dominant-baseline="central" id="COL_1">`</text>
+                    <text x="-140" y="0" text-anchor="middle" dominant-baseline="central" id="S_3">S</text>
+                    <text x="-98" y="0" text-anchor="middle" dominant-baseline="central" id="P_2">P</text>
+                    <text x="-59" y="0" text-anchor="middle" dominant-baseline="central" id="A_1">A</text>
+                    <text x="-13" y="0" text-anchor="middle" dominant-baseline="central" id="C">C</text>
+                    <text x="30" y="0" text-anchor="middle" dominant-baseline="central" id="E_2">E</text>
+                    <text x="66" y="0" text-anchor="middle" dominant-baseline="central" id="COL_2">` </text>
+                    <text x="118" y="0" text-anchor="middle" dominant-baseline="central" id="T_1">T</text>
+                    <text x="162" y="0" text-anchor="middle" dominant-baseline="central" id="O">O</text>
+                    <text x="223" y="0" text-anchor="middle" dominant-baseline="central" id="S_4">S</text>
+                    <text x="266" y="0" text-anchor="middle" dominant-baseline="central" id="T_2">T</text>
+                    <text x="305" y="0" text-anchor="middle" dominant-baseline="central" id="A_2">A</text>
+                    <text x="350" y="0" text-anchor="middle" dominant-baseline="central" id="R_2">R</text>
+                    <text x="392" y="0" text-anchor="middle" dominant-baseline="central" id="T_3">T</text>
+                </g>
+            </g>
+        </g>
+
+        <g id="info_screen">
+            <g transform="translate(633,1078)">
+                <rect id="buttonBg" x="0" y="0" width="68" height="68" filter="url(#filter2_d_50_2)"/>
+                <text id="buttonTxt" x="34" y="34" text-anchor="middle" dominant-baseline="central" filter="url(#filter3_i_50_2)">1</text>
+            </g>
+    
+            <g transform="translate(721,1078)">
+                <rect id="buttonBg" x="0" y="0" width="68" height="68" filter="url(#filter2_d_50_2)"/>
+                <text id="buttonTxt" x="34" y="34" text-anchor="middle" dominant-baseline="central" filter="url(#filter3_i_50_2)">2</text>
+            </g>
+    
+            <g transform="translate(809,1078)">
+                <rect id="buttonBg" x="0" y="0" width="68" height="68" filter="url(#filter2_d_50_2)"/>
+                <text id="buttonTxt" x="34" y="34" text-anchor="middle" dominant-baseline="central" filter="url(#filter3_i_50_2)">3</text>
+            </g>
+            
+            <g opacity="0.3" transform="translate(342,990)">
+                <rect id="buttonBg" x="0" y="0" width="68" height="68" filter="url(#filter2_d_50_2)"/>
+                <polygon id="buttonImg" points="34,14 54.785,50 13.215,50" filter="url(#filter3_i_50_2)"/>
+            </g>
+    
+            <g transform="translate(254,1078)">
+                <rect id="buttonBg" x="0" y="0" width="68" height="68" filter="url(#filter2_d_50_2)"/>
+                <polygon id="buttonImg" points="45.785,13 9.785,33.78 45.785,54.57" filter="url(#filter3_i_50_2)"/>
+            </g>
+    
+            <g transform="translate(430,1078)">
+                <rect id="buttonBg" x="0" y="0" width="68" height="68" filter="url(#filter2_d_50_2)"/>
+                <polygon id="buttonImg" points="21.785,13 57.785,33.78 21.785,54.57" filter="url(#filter3_i_50_2)"/>
+            </g>
+    
+            <g opacity="0.3" transform="translate(342,1078)">
+                <rect id="buttonBg" x="0" y="0" width="68" height="68" filter="url(#filter2_d_50_2)"/>
+                <polygon id="buttonImg" points="34,54 13.215,18 54.785,18" filter="url(#filter3_i_50_2)"/>
+            </g>
+    
+            <text id="infoTxt" x="208" y="1020" text-anchor="middle" dominant-baseline="central" filter="url(#filter16_d_50_2)">MOVE</text>
+    
+            <text id="infoTxt" x="755" y="1020" text-anchor="middle" dominant-baseline="central" filter="url(#filter17_d_50_2)">SHAPES</text>    
+        </g>
+
+        <g id="over_screen">
+            <g filter="url(#filter2_b_21_11)">
+                <rect id="over_bg" x="18" y="10" width="960" height="1440"/>
+            </g>
+            <g filter="url(#filter3_d_21_11)">
+                <text x="50%" y="445" id="overTxt" text-anchor="middle" dominant-baseline="central">GAME<tspan x="50%" dy="1.2em" text-anchor="middle">OVER</tspan></text>
+            </g>
+            <text id="score_overTxt" x="50%" y="926" text-anchor="middle" dominant-baseline="central">SCORE: 12</text>
+            <text id="restartTxt" x="50%" y="1123" text-anchor="middle" dominant-baseline="central">PRESS `CTRL+R` TO RESTART</text>
+        </g>
+        
+        <g id="game_board">
+            <!--BLOCKS-->
+            <g class="moving_block" transform="translate(178,137.5)">
+                <rect id="rect_moving" x="-156" y="-62.5" width="312" height="125"/>
+            </g>
+
+            <g class="moving_block" transform="translate(498,137.5)">
+                <rect id="rect_moving" x="-156" y="-62.5" width="312" height="125"/>
+            </g>
+
+            <g class="moving_block" transform="translate(818,137.5)">
+                <rect id="rect_moving" x="-156" y="-62.5" width="312" height="125"/>
+            </g>
+            
+            <!--BOX DESTRUCTABLE BLOCK-->
+            <g id="rect_destructable_block" class="moving_block" transform="translate(178,452.5)">
+                <rect id="rect_moving" x="-156" y="-62.5" width="312" height="125"/>
+                <rect class="destructable_mark" x="-42" y="-41.5" width="83" height="83"/>
+            </g>
+
+            <!--CIRCLE DESTRUCTABLE BLOCK-->
+            <g id="circle_destructable_block" class="moving_block" transform="translate(498,452.5)">
+                <rect id="rect_moving" x="-156" y="-62.5" width="312" height="125"/>
+                <circle class="destructable_mark" cx="0" cy="0" r="41.5"/>
+            </g>
+
+            <!--TRIANGLE DESTRUCTABLE BLOCK-->
+            <g id="polygon_destructable_block" class="moving_block" transform="translate(818,452.5)">
+                <rect id="rect_moving" x="-156" y="-62.5" width="312" height="125"/>
+                <polygon class="destructable_mark" points="0,-36.5 37,37.5 -37,37.5"/>
+            </g>
+
+            <!--PLAYER-->
+            <g id="player" transform="translate(498,1330)">
+                <rect x="-64" y="-64" width="128" height="128"/>
+                <circle cx="0" cy="0" r="64"/>
+                <polygon points="0,-64 64,64 -64,64"/>
+            </g>
+        </g>
+
+        <!--BORDER-->
+        <rect class="border" x="13" y="5" width="970" height="1450"/>
+    </g>
+    <defs>
+        <clipPath id="mask">
+            <rect x="13" y="5" width="970" height="1450"/>
+        </clipPath>
+        <filter id="filter0_d_2_3" x="0" y="0" width="996" height="1476" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="8"/>
+            <feGaussianBlur stdDeviation="4"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_3"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_3" result="shape"/>
+        </filter>
+        <filter id="filter1_i_2_3" x="4" y="581" width="952" height="278" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_2_3"/>
+        </filter>
+        <filter id="filter2_d_14_3" x="0" y="682" width="960" height="90" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_14_3"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_14_3" result="shape"/>
+        </filter>
+        <filter id="filter2_b_21_11" x="8" y="0" width="980" height="1460" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="5"/>
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_21_11"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_21_11" result="shape"/>
+        </filter>
+        <filter id="filter3_d_14_3" x="138.336" y="151.418" width="722.245" height="308.074" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="10"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_14_3"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_14_3" result="shape"/>
+        </filter>
+        <filter id="filter3_d_21_11" x="173.59" y="361.812" width="647.238" height="444.375" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="10"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_21_11"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_21_11" result="shape"/>
+        </filter>
+        <filter id="filter2_d_50_2" x="0" y="0" width="76" height="78" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="6"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_50_2"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_50_2" result="shape"/>
+        </filter>
+        <filter id="filter3_i_50_2" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_50_2"/>
+        </filter>
+        <filter id="filter16_d_50_2" x="107.812" y="995.818" width="200.108" height="55.8182" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_50_2"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_50_2" result="shape"/>
+        </filter>
+        <filter id="filter17_d_50_2" x="619.818" y="995.818" width="270.375" height="55.7272" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_50_2"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_50_2" result="shape"/>
+        </filter>
+    </defs>
+    <script type="text/javascript" href="SVGNode.js"/>
+    <script type="text/javascript" href="TextNode.js"/>
+    <script type="text/javascript" href="GroupNode.js"/>
+    <script type="text/javascript" href="Player.js"/>
+    <script type="text/javascript" href="ObjectContainer.js"/>
+    <script type="text/javascript" href="GameManager.js"/>
+</svg>

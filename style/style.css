@@ -52,6 +52,13 @@
     font-size: 64px;
 }
 
+#buttonTxtESC {
+    fill: #951A38;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+}
+
 #buttonImg {
     fill: #951A38;
 }
@@ -79,6 +86,20 @@
     font-weight: 700;
     fill: white;
     font-size: 220px;
+}
+
+#pauseTxt {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    fill: white;
+    font-size: 220px;
+}
+
+#pauseESCTxt {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    fill: white;
+    font-size: 64px;
 }
 
 #score_overTxt {

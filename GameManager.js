@@ -1,4 +1,4 @@
-//odleglosc miedzy = 315
+//AUTHOR: Marceli Antosik
 
 //GameSettings
 let horrizontal_points = [178, 498, 818];
@@ -13,6 +13,7 @@ let mode = 0; //0-easy, 1-medium, 2-hard, 3-extreme
 let end = false;
 let start = false;
 let info = true;
+let pause = false;
 let animCount = 0;
 
 //Prefabs
@@ -29,17 +30,35 @@ let game_board = document.getElementById("game_board");
 let screen = document.getElementById("screen");
 let startScreen = document.getElementById("start_screen");
 let overScreen = new SVGNode({selector: "#over_screen"});
+let pauseScreen = new SVGNode({selector: "#pause_screen"});
 let infoScreen = new SVGNode({selector: "#info_screen"});
 let scoreTxtObj = new TextNode({selector: ".scoreTxt"});
+
+
+//AUDIO
+//WEB: https://www.indiegamemusic.com/viewtrack.php?id=5207
+//AUTHOR: Tac0zzz1
 let audio = new Audio("media/9-26-17.mp3");
 
 //GameObjects
 let blocks = [];
 let player = new Player({selector: "#player"});
 
+//Time
+let currentTime;
+let lastTime;
+let spawnCounterTime = spawnTime;
+
+document.addEventListener("visibilitychange", (event) => {
+    if (document.visibilityState != "visible" && !pause && !end){
+        onPause();
+    }
+});
+
 document.addEventListener("keydown", (event) => {
 
-    if (start && !end) {
+    if (start && !end && !pause) {
+
         if (event.key == "ArrowRight"){
             player.move("right");
         }
@@ -55,6 +74,9 @@ document.addEventListener("keydown", (event) => {
         else if (event.key == "3"){
             player.changeShape(2);
         }
+        else if (event.key == "Escape") {
+            onPause();
+        }
     }
     else if (!start) {
         if (event.key == " ") {
@@ -64,8 +86,13 @@ document.addEventListener("keydown", (event) => {
         }
     }
     else if (end) {
-        if (event.key == "r" && event.ctrlKey) {
+        if (event.ctrlKey && event.key == "r") {
             document.location.reload();
+        }
+    }
+    else if(pause){
+        if (event.key == "Escape") {
+            onPauseEnd();
         }
     }
 });
@@ -80,6 +107,7 @@ function onStart() {
     scoreTxtObj.textContent = score;
 
     screen.removeChild(overScreen.getNode());
+    screen.removeChild(pauseScreen.getNode());
 
     const moving_blocks = document.querySelectorAll(".moving_block");
 
@@ -101,13 +129,20 @@ function onStart() {
 async function animateOpacity(to, time, value, count) {
     let from = infoScreen.get("opacity");
 
-    infoScreen.set("opacity", from-value);
+    if (!pause){
+        infoScreen.set("opacity", from-value);
+    }
 
     if(count == 100){
         return;
     }
 
-    setTimeout(animateOpacity, time, to, time, value, count+1);
+    if (!pause){
+        setTimeout(animateOpacity, time, to, time, value, count+1);
+    }
+    else {
+        setTimeout(animateOpacity, time, to, time, value, count);
+    }
 }
 
 async function animateInfoOpacity(to, time) {
@@ -122,8 +157,9 @@ function checkStart() {
 
     if (start) {
         animateInfoOpacity(1, 0.35);
+        currentTime = new Date().getTime();
+        lastTime = new Date().getTime();
         onUpdate()
-        onSpawnUpdate()
         onMoveUpdate()
         return;
     }
@@ -197,6 +233,14 @@ function onCollision() {
 
 async function onUpdate(){
 
+    currentTime = new Date().getTime();
+
+    deltaTime = currentTime-lastTime;
+
+    if (!document.hasFocus() && !pause && !end){
+        onPause();
+    }
+
     scoreTxtObj.textContent = score;
 
     if (score >= win_score){
@@ -210,7 +254,9 @@ async function onUpdate(){
     if (end) {
         return;
     }
-    else{
+    else if (!pause){
+        spawnCounterTime -= deltaTime;
+        
         if (score >= 0 && score < 25) {
             mode = 0;
             spawnTime = 3000;
@@ -235,16 +281,18 @@ async function onUpdate(){
             speed = 25;
             miliseconds = 20;
         }
+
+        if (spawnCounterTime <= 0) {
+            onSpawnUpdate();
+            spawnCounterTime = spawnTime;
+        }
     }
 
+    lastTime = currentTime;
     setTimeout(onUpdate, 0);
 }
 
-async function onSpawnUpdate() {
-
-    if (end) {
-        return;
-    }
+function onSpawnUpdate() {
 
     if (info) {
         info = false;
@@ -253,10 +301,9 @@ async function onSpawnUpdate() {
         if (animCount == 1) {
             animateInfoOpacity(0, 0.35);
         }
-        spawn()
-    }
 
-    setTimeout(onSpawnUpdate, spawnTime)
+        spawn();
+    }
 }
 
 async function onMoveUpdate() {
@@ -265,14 +312,16 @@ async function onMoveUpdate() {
         return;
     }
 
-    blocks.forEach(element => {
-        element.move(speed);
-        if (element.y >= 1503){
-            element.remove(game_board);
-            blocks.splice(blocks.indexOf(element), 1);
-            score++;
-        }
-    });
+    if(!pause) {
+        blocks.forEach(element => {
+            element.move(speed);
+            if (element.y >= 1503){
+                element.remove(game_board);
+                blocks.splice(blocks.indexOf(element), 1);
+                score++;
+            }
+        });
+    }
 
     setTimeout(onMoveUpdate, miliseconds)
 }
@@ -293,6 +342,16 @@ function onWin() {
     overTxtObj.getNode().firstChild.nextSibling.textContent = "WON!";
     overTxtObj.getNode().firstChild.textContent = "YOU";
     scoreOverTxtObj.textContent = `SCORE: ${score}`;
+}
+
+function onPause() {
+    pause = true;
+    screen.appendChild(pauseScreen.duplicateNode());
+}
+
+function onPauseEnd() {
+    screen.removeChild(document.getElementById("pause_screen"));
+    pause = false;
 }
 
 onStart()

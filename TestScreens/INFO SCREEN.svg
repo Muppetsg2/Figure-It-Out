@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?xml-stylesheet href="style/style.css" type="text/css"?>
+<?xml-stylesheet href="../style/style.css" type="text/css"?>
 
 <svg width="100%" height="100%" viewBox="0 0 996 1476" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g filter="url(#filter0_d_50_2)">
@@ -7,6 +7,11 @@
         <rect x="434" y="1266" width="128" height="128" fill="white"/>
         <g filter="url(#filter1_i_50_2)">
             <path d="M497.966 827.091C482.33 827.03 468.875 823.182 457.602 815.545C446.39 807.909 437.754 796.848 431.693 782.364C425.693 767.879 422.723 750.455 422.784 730.091C422.784 709.788 425.784 692.485 431.784 678.182C437.845 663.879 446.481 653 457.693 645.545C468.966 638.03 482.39 634.273 497.966 634.273C513.542 634.273 526.936 638.03 538.148 645.545C549.42 653.061 558.087 663.97 564.148 678.273C570.208 692.515 573.208 709.788 573.148 730.091C573.148 750.515 570.117 767.97 564.057 782.455C558.057 796.939 549.451 808 538.239 815.636C527.027 823.273 513.602 827.091 497.966 827.091ZM497.966 794.455C508.633 794.455 517.148 789.091 523.511 778.364C529.875 767.636 533.027 751.545 532.966 730.091C532.966 715.97 531.511 704.212 528.602 694.818C525.754 685.424 521.693 678.364 516.42 673.636C511.208 668.909 505.057 666.545 497.966 666.545C487.36 666.545 478.875 671.848 472.511 682.455C466.148 693.061 462.936 708.939 462.875 730.091C462.875 744.394 464.299 756.333 467.148 765.909C470.057 775.424 474.148 782.576 479.42 787.364C484.693 792.091 490.875 794.455 497.966 794.455Z" fill="#951A38"/>
+        </g>
+
+        <g transform="translate(603,869)">
+            <rect id="buttonBg" x="0" y="0" width="68" height="68" filter="url(#filter2_d_50_2)"/>
+            <text id="buttonTxtESC" x="34" y="34" text-anchor="middle" dominant-baseline="central" filter="url(#filter3_i_50_2)">ESC</text>
         </g>
 
         <g transform="translate(633,1078)">
@@ -47,6 +52,8 @@
         <text id="infoTxt" x="208" y="1020" text-anchor="middle" dominant-baseline="central" filter="url(#filter16_d_50_2)">MOVE</text>
 
         <text id="infoTxt" x="755" y="1020" text-anchor="middle" dominant-baseline="central" filter="url(#filter17_d_50_2)">SHAPES</text>
+
+        <text id="infoTxt" x="46%" y="902" text-anchor="middle" dominant-baseline="central" filter="url(#filter20_d_50_2)">PAUSE</text>
 
         <rect x="13" y="5" width="970" height="1450" stroke="white" stroke-width="10"/>
     </g>
@@ -222,6 +229,16 @@
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_50_2" result="shape"/>
         </filter>
         <filter id="filter17_d_50_2" x="619.818" y="995.818" width="270.375" height="55.7272" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_50_2"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_50_2" result="shape"/>
+        </filter>
+        <filter id="filter20_d_50_2" x="350.125" y="878.818" width="217.483" height="55.7273" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix"/>
             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
             <feOffset dy="4"/>

@@ -50,7 +50,7 @@ let lastTime;
 let spawnCounterTime = spawnTime;
 
 document.addEventListener("visibilitychange", (event) => {
-    if (document.visibilityState != "visible" && !pause && !end){
+    if (document.visibilityState != "visible" && !pause && !end && start){
         onPause();
     }
 });
@@ -237,7 +237,7 @@ async function onUpdate(){
 
     deltaTime = currentTime-lastTime;
 
-    if (!document.hasFocus() && !pause && !end){
+    if (!document.hasFocus() && !pause && !end && start){
         onPause();
     }
 

@@ -299,10 +299,10 @@
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_58_2" result="shape"/>
         </filter>
     </defs>
-    <script type="text/javascript" href="SVGNode.js"/>
-    <script type="text/javascript" href="TextNode.js"/>
-    <script type="text/javascript" href="GroupNode.js"/>
-    <script type="text/javascript" href="Player.js"/>
-    <script type="text/javascript" href="ObjectContainer.js"/>
+    <script type="text/javascript" href="classes/SVGNode.js"/>
+    <script type="text/javascript" href="classes/TextNode.js"/>
+    <script type="text/javascript" href="classes/GroupNode.js"/>
+    <script type="text/javascript" href="classes/Player.js"/>
+    <script type="text/javascript" href="classes/ObjectContainer.js"/>
     <script type="text/javascript" href="GameManager.js"/>
 </svg>

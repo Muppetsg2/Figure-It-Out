@@ -1,7 +1,7 @@
 # Figure It Out
 
 <div align="center">
-  <img src="./images/banner.png" alt="Game Banner" width="500" height="300">
+  <img src="./images/banner.png" alt="Game banner displaying Figure It Out's title" width="500" height="300">
 </div>
 
 ## Overview
@@ -30,14 +30,14 @@ The game features:
 
 Your objective is to:
 1. **Survive** by destroying destructible falling blocks.
-2. **Score points** by through the falling blocks.
+2. **Score points** Score points by breaking through the falling blocks.
 3. Reach the **ultimate score of 9999** to win the game.
 
 ### Screenshots
 Below are a few screenshots highlighting the core gameplay elements.
 
 <div align="center">
-  <img src="./images/screenshot1.png" alt="Game Screenshot 1" width="200" height="300"> <img src="./images/screenshot2.png" alt="Game Screenshot 2" width="200" height="300"> <img src="./images/screenshot3.png" alt="Game Screenshot 3" width="200" height="300">
+  <img src="./images/screenshot1.png" alt="Game Screenshot showing main menu" width="200" height="300"> <img src="./images/screenshot2.png" alt="Game Screenshot showing screen with input info" width="200" height="300"> <img src="./images/screenshot3.png" alt="Game Screenshot showing gameplay" width="200" height="300">
 </div>
 
 ## Controls
@@ -49,7 +49,7 @@ Below are a few screenshots highlighting the core gameplay elements.
 - **CTRL + R**: Reset the game after it ends or while playing.
 
 ### GIF Demo
-<img src="./images/gameplay.gif" alt="Gameplay GIF" width="339" height="500">
+<img src="./images/gameplay.gif" alt="GIF showing Figure It Out gameplay with the player shifting shapes to avoid falling blocks." width="339" height="500">
 
 *A quick look at the action in Figure It Out.*
 
@@ -59,19 +59,19 @@ The game difficulty automatically adjusts based on your score:
 
 - **Easy Mode (0-25 points)**: 
   - Blocks move slowly.
-  - Spawns every 3 seconds.
+  - Blocks spawn every 3 seconds.
   
 - **Medium Mode (25-100 points)**:
   - Blocks move faster.
-  - Spawns every 1.8 seconds.
+  - Blocks spawn every 1.8 seconds.
   
 - **Hard Mode (100-300 points)**:
   - Faster block speed.
-  - Spawns every 1.2 seconds.
+  - Blocks spawn every 1.2 seconds.
 
 - **Extreme Mode (300+ points)**:
   - Maximum speed.
-  - Spawns every second.
+  - Blocks spawn every second.
 
 ## How to Play
 
@@ -89,7 +89,7 @@ The game features looping background music to immerse you in the experience. Mak
 
 ## Known Issues
 
-- Occasionally, blocks may spawn too close to each other in higher difficulty modes.
+- Blocks may spawn too close to each other in higher difficulty modes, making it challenging to react in time.
 - On some browsers, pausing when the tab loses focus might not work correctly.
 
 ## Credits

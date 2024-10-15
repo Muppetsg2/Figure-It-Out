@@ -96,3 +96,9 @@ The game features looping background music to immerse you in the experience. Mak
 
 - **Game Developer**: Muppetsg2
 - **Music**: Tac0zzz1
+
+## License
+
+This game is licensed under the GNU General Public License v3.0 (GPL-3.0). This license allows you to freely use, modify, and distribute the game, with the condition that any derivative works or distributions must also be licensed under the same terms.
+
+See the [LICENSE](./LICENSE) file for more details.

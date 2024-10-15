@@ -1,15 +1,10 @@
 class ObjectContainer {
     constructor(tab){
-        this.list = [];
-        tab.forEach(element => {
-            this.list.push(element); 
-        });
+        this.list = [...tab];
     }
 
     move(value) {
-        this.list.forEach(obj => {
-            obj.setPos(obj.x, obj.y+value);
-        });
+        this.list.forEach(obj => obj.setPos(obj.x, obj.y + value));
     }
 
     get y() {
@@ -18,9 +13,7 @@ class ObjectContainer {
 
     remove(node) {
         if (node) {
-            this.list.forEach(obj => {
-                node.removeChild(obj.getNode());
-            });
+            this.list.forEach(obj => node.removeChild(obj.getNode()));
         }
     }
 }

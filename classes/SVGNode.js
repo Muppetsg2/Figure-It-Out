@@ -1,10 +1,6 @@
 class SVGNode {
     constructor(obj) {
-        if (obj.selector) {
-            this.node = document.querySelector(obj.selector);
-        } else if (obj.domNode) {
-            this.node = obj.domNode;
-        }
+		this.node = obj.selector ? document.querySelector(obj.selector) : obj.domNode;
     }
 
     getStringAttr(attrName) {
@@ -12,19 +8,24 @@ class SVGNode {
     }
 
     get(attrName) {
-        return Number(this.getStringAttr(attrName));
+        return parseFloat(this.getStringAttr(attrName));
     }
 
     set(attrName, value) {
-        return this.node.setAttribute(attrName, value);
+        this.node.setAttribute(attrName, value);
     }
 
     collidesWith(svg) {
+		const halfWidth = this.width / 2;
+		const halfHeight = this.height / 2;
+		const svgHalfWidth = svg.width / 2;
+		const svgHalfHeight = svg.height / 2;
+		
         return (
-            this.x + this.width/2 >= svg.x && // left-edge
-            this.x <= svg.x + svg.width/2 && // right-edge
-            this.y + this.height/2 >= svg.y && // top-edge
-            this.y <= svg.y + svg.height/2 // bottom-edge
+            this.x + halfWidth >= svg.x && // left-edge
+            this.x <= svg.x + svgHalfWidth && // right-edge
+            this.y + halfHeight >= svg.y && // top-edge
+            this.y <= svg.y + svgHalfHeight // bottom-edge
         );
     }
 

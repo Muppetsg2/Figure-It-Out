@@ -1,13 +1,10 @@
 class GroupNode extends SVGNode{
-
     notImplemented = true;
 
     get transform() {
-        let s = new String(this.getStringAttr("transform")).substring(9).substring(1);
-        let size = s.length;
-        let tab = s.substring(0,size-1).replace(/\s+/g, '').split(",");
-        let retTab = [Number(parseFloat(tab[0])), Number(parseFloat(tab[1]))];
-        return retTab;
+		const transformAttr = this.getStringAttr("transform");
+		const values = transformAttr.match(/translate\(([^)]+)\)/)[1].split(',').map(Number);
+        return values;
     }
 
     set transform(value) {
@@ -31,13 +28,8 @@ class GroupNode extends SVGNode{
     }
 
     get width() {
-        let child = this.node.firstChild;
-
-        while (child.nodeType == 3 && child.nextSibling){
-            child = child.nextSibling;
-        }
-
-        let obj = new SVGNode({ domNode: child});
+		const child = this.node.querySelector(':not(text)');
+        const obj = new SVGNode({ domNode: child });		
         return obj.get("width");
     }
 
@@ -48,13 +40,8 @@ class GroupNode extends SVGNode{
     }
 
     get height() {
-        let child = this.node.firstChild;
-
-        while (child.nodeType == 3 && child.nextSibling){
-            child = child.nextSibling;
-        }
-
-        let obj = new SVGNode({ domNode: child});
+		const child = this.node.querySelector(':not(text)');
+        const obj = new SVGNode({ domNode: child });
         return obj.get("height");
     }
 

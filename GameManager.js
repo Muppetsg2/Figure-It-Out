@@ -1,50 +1,48 @@
-//AUTHOR: Marceli Antosik
+// AUTHOR: Muppetsg2
 
-//GameSettings
-let horrizontal_points = [178, 498, 818];
-let blocks_vertical_spawn_point = -70;
-let win_score = 9999;
+// Game Settings
+const horizontal_points = [178, 498, 818];
+const blocks_vertical_spawn_point = -70;
+const win_score = 9999;
 let speed = 10;
-let miliseconds = 15;
+const miliseconds = 20;
 let spawnTime = 2000;
-let player_vertical_pos = 1330;
+const player_vertical_pos = 1330;
 let score = 0;
-let mode = 0; //0-easy, 1-medium, 2-hard, 3-extreme
+let mode = 0; // 0-easy, 1-medium, 2-hard, 3-extreme
 let end = false;
 let start = false;
 let info = true;
 let pause = false;
 let animCount = 0;
 
-//Prefabs
-let blockPrefab = new GroupNode({selector: ".moving_block"});
-let blockBoxPrefab = new GroupNode({selector: "#rect_destructable_block"});
-let blockCirclePrefab = new GroupNode({selector: "#circle_destructable_block"});
-let blockTrianglePrefab = new GroupNode({selector: "#polygon_destructable_block"});
+// Prefabs
+const blockPrefab = new GroupNode({ selector: ".moving_block" });
+const blockBoxPrefab = new GroupNode({ selector: "#rect_destructable_block" });
+const blockCirclePrefab = new GroupNode({ selector: "#circle_destructable_block" });
+const blockTrianglePrefab = new GroupNode({ selector: "#polygon_destructable_block" });
+const destructableBlockPrefabs = [blockBoxPrefab, blockCirclePrefab, blockTrianglePrefab];
 
-let destructableBlockPrefabs = []
-destructableBlockPrefabs.push(blockBoxPrefab, blockCirclePrefab, blockTrianglePrefab);
-
-//StartSettings
+// Start Settings
 let game_board = document.getElementById("game_board");
 let screen = document.getElementById("screen");
 let startScreen = document.getElementById("start_screen");
-let overScreen = new SVGNode({selector: "#over_screen"});
-let pauseScreen = new SVGNode({selector: "#pause_screen"});
-let infoScreen = new SVGNode({selector: "#info_screen"});
-let scoreTxtObj = new TextNode({selector: ".scoreTxt"});
+let overScreen = new SVGNode({ selector: "#over_screen" });
+let pauseScreen = new SVGNode({ selector: "#pause_screen" });
+let infoScreen = new SVGNode({ selector: "#info_screen" });
+let scoreTxtObj = new TextNode({ selector: ".scoreTxt" });
 
 
-//AUDIO
-//WEB: https://www.indiegamemusic.com/viewtrack.php?id=5207
-//AUTHOR: Tac0zzz1
-let audio = new Audio("media/9-26-17.mp3");
+// AUDIO
+// WEB: https://www.indiegamemusic.com/viewtrack.php?id=5207
+// AUTHOR: Tac0zzz1
+const audio = new Audio("media/9-26-17.mp3");
 
-//GameObjects
+// GameObjects
 let blocks = [];
-let player = new Player({selector: "#player"});
+let player = new Player({ selector: "#player" });
 
-//Time
+// Time
 let currentTime;
 let lastTime;
 let spawnCounterTime = spawnTime;
@@ -56,44 +54,38 @@ document.addEventListener("visibilitychange", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-
     if (start && !end && !pause) {
-
-        if (event.key == "ArrowRight"){
-            player.move("right");
-        }
-        else if (event.key == "ArrowLeft"){
-            player.move("left");
-        }
-        else if (event.key == "1"){
-            player.changeShape(0);
-        }
-        else if (event.key == "2"){
-            player.changeShape(1);
-        }
-        else if (event.key == "3"){
-            player.changeShape(2);
-        }
-        else if (event.key == "Escape") {
-            onPause();
-        }
-    }
-    else if (!start) {
-        if (event.key == " ") {
-            startScreen.setAttribute("class", "hidden");
-            start = true;
-            audio.play();
+		switch (event.key) {
+			case "ArrowRight":
+                player.move("right");
+                break;
+            case "ArrowLeft":
+                player.move("left");
+                break;
+            case "1":
+                player.changeShape(0);
+                break;
+            case "2":
+                player.changeShape(1);
+                break;
+            case "3":
+                player.changeShape(2);
+                break;
+            case "Escape":
+                onPause();
+                break;
         }
     }
-    else if (end) {
-        if (event.ctrlKey && event.key == "r") {
-            document.location.reload();
-        }
+    else if (!start && event.key == " ") {
+		startScreen.setAttribute("class", "hidden");
+		start = true;
+		audio.play();
     }
-    else if(pause){
-        if (event.key == "Escape") {
-            onPauseEnd();
-        }
+    else if (end && event.ctrlKey && event.key == "r") {
+		document.location.reload();
+    }
+    else if(pause && event.key == "Escape"){
+		onPauseEnd();
     }
 });
 
@@ -105,183 +97,117 @@ function getRandomIntInclusive(min, max) {
 
 function onStart() {
     scoreTxtObj.textContent = score;
-
     screen.removeChild(overScreen.getNode());
     screen.removeChild(pauseScreen.getNode());
 
-    const moving_blocks = document.querySelectorAll(".moving_block");
-
-    moving_blocks.forEach((block) => {
+	document.querySelectorAll(".moving_block").forEach(block => {
         game_board.removeChild(block);
     });
 
     infoScreen.set("opacity", 0);
-
     audio.load();
     audio.loop = true;
     audio.volume = 0.1;
     audio.autoplay = true;
     audio.muted = false;
-
+	
     checkStart();
 }
 
 async function animateOpacity(to, time, value, count) {
-    let from = infoScreen.get("opacity");
-
-    if (!pause){
-        infoScreen.set("opacity", from-value);
+    const from = infoScreen.get("opacity");
+    if (!pause) {
+        infoScreen.set("opacity", from - value);
     }
-
-    if(count == 100){
-        return;
-    }
-
-    if (!pause){
-        setTimeout(animateOpacity, time, to, time, value, count+1);
-    }
-    else {
-        setTimeout(animateOpacity, time, to, time, value, count);
-    }
+	
+	if (count === 100) return;
+	
+	setTimeout(animateOpacity, time, to, time, value, pause ? count : count + 1);
 }
 
 async function animateInfoOpacity(to, time) {
-    let steps = 100.0;
-    let from = infoScreen.get("opacity");
+    const steps = 100.0;
+    const from = infoScreen.get("opacity");
     animCount += 1;
-
-    animateOpacity(to, (time*1000)/steps, (from-to)/steps, 0);
+    animateOpacity(to, (time * 1000) / steps, (from - to) / steps, 0);
 }
 
 function checkStart() {
-
     if (start) {
         animateInfoOpacity(1, 0.35);
-        currentTime = new Date().getTime();
-        lastTime = new Date().getTime();
+        currentTime = Date.now();
+        lastTime = Date.now();
         onUpdate()
         onMoveUpdate()
         return;
     }
-
     setTimeout(checkStart, 0);
 }
 
 function spawn() {
-
     let tab = [];
+    let pos = [...horizontal_points];
+    let destructable_blocks = [...destructableBlockPrefabs]
 
-    let pos = [];
-
-    let destructable_blocks = []
-
-    destructableBlockPrefabs.forEach(element => {
-        destructable_blocks.push(element);
-    });
-
-    horrizontal_points.forEach(point => {
-        pos.push(point);
-    });
-
-    let destrCounter = Math.floor(-0.33*mode + 2);
+    let destrCounter = Math.floor(-0.33 * mode + 2);
 
     for (let i = 0; i < destrCounter; ++i) {
         
-        let prefab = destructable_blocks.splice(getRandomIntInclusive(0,destructable_blocks.length-1), 1)[0];
-
-        let block = new GroupNode({domNode: prefab.duplicateNode()});
-
-        block.setPos(pos.splice(getRandomIntInclusive(0,2-i),1)[0], blocks_vertical_spawn_point);
-        
-        let gameBlock = new GroupNode({domNode: game_board.appendChild(block.getNode())});
-        tab.push(gameBlock);
+        const prefab = destructable_blocks.splice(getRandomIntInclusive(0, destructable_blocks.length - 1), 1)[0];
+        let block = new GroupNode({ domNode: prefab.duplicateNode() });
+        block.setPos(pos.splice(getRandomIntInclusive(0, 2 - i), 1)[0], blocks_vertical_spawn_point);
+        tab.push(new GroupNode({ domNode: game_board.appendChild(block.getNode()) }));
     }
 
-    for (let i = 0; i < 3-destrCounter; ++i) {
-        let block = new GroupNode({domNode: blockPrefab.duplicateNode()})
-
-        block.setPos(pos.splice(getRandomIntInclusive(0,2-destrCounter-i),1)[0], blocks_vertical_spawn_point);
-
-        let gameBlock = new GroupNode({domNode: game_board.appendChild(block.getNode())});
-        tab.push(gameBlock);
+    for (let i = 0; i < 3 - destrCounter; ++i) {
+        let block = new GroupNode({ domNode: blockPrefab.duplicateNode() })
+        block.setPos(pos.splice(getRandomIntInclusive(0, 2 - destrCounter - i), 1)[0], blocks_vertical_spawn_point);
+        tab.push(new GroupNode({ domNode: game_board.appendChild(block.getNode()) }));
     }
-
-    let container = new ObjectContainer(tab);
-    blocks.push(container);
+	
+    blocks.push(new ObjectContainer(tab));
 }
 
 function onCollision() {
-
-    const moving_blocks = document.querySelectorAll(".moving_block");
-
-    moving_blocks.forEach((block) => {
-
-        let obj = new GroupNode({domNode: block});
-
-        if (player.collidesWith(obj)) {
-            
-            if (player.shape == block.id.split("_")[0]){
+    document.querySelectorAll(".moving_block").forEach(block => {
+        let obj = new GroupNode({ domNode: block });
+		
+		console.log(player.width);
+		console.log(player.height);
+		
+        if (player.collidesWith(obj) && player.shape == block.id.split("_")[0]) {
                 block.setAttribute("class", "hidden");
-            }
-            else {
-                end = true;
-                onDead();
-            }
-        }
+				console.log("HEJ");
+		} 
+		else if (player.collidesWith(obj) && player.shape != block.id.split("_")[0]) {
+			end = true;
+			onDead();
+		}
     });
 }
 
 async function onUpdate(){
+    currentTime = Date.now();
+    const deltaTime = currentTime - lastTime;
 
-    currentTime = new Date().getTime();
-
-    deltaTime = currentTime-lastTime;
-
-    if (!document.hasFocus() && !pause && !end && start){
+    if (!document.hasFocus() && !pause && !end && start) {
         onPause();
     }
 
     scoreTxtObj.textContent = score;
-
     if (score >= win_score){
         end = true;
         onWin();
+		return;
     }
     else {
         onCollision();
+		if (end) return;
     }
 
-    if (end) {
-        return;
-    }
-    else if (!pause){
+    if (!end && !pause){
         spawnCounterTime -= deltaTime;
-        
-        if (score >= 0 && score < 25) {
-            mode = 0;
-            spawnTime = 3000;
-            speed = 10;
-            miliseconds = 20;
-        }
-        else if (score >= 25 && score < 100) {
-            mode = 1;
-            spawnTime = 1800;
-            speed = 15;
-            miliseconds = 20;
-        }
-        else if (score >= 100 && score < 300) {
-            mode = 2;
-            spawnTime = 1200;
-            speed = 20;
-            miliseconds = 20;
-        }
-        else {
-            mode = 3;
-            spawnTime = 1000;
-            speed = 25;
-            miliseconds = 20;
-        }
-
+		updateMode();
         if (spawnCounterTime <= 0) {
             onSpawnUpdate();
             spawnCounterTime = spawnTime;
@@ -292,25 +218,38 @@ async function onUpdate(){
     setTimeout(onUpdate, 0);
 }
 
-function onSpawnUpdate() {
-
-    if (info) {
-        info = false;
+function updateMode() {
+    if (score >= 0 && score < 25) {
+        mode = 0;
+        spawnTime = 3000;
+        speed = 10;
+    } else if (score < 100) {
+        mode = 1;
+        spawnTime = 1800;
+        speed = 15;
+    } else if (score < 300) {
+        mode = 2;
+        spawnTime = 1200;
+        speed = 20;
+    } else {
+        mode = 3;
+        spawnTime = 1000;
+        speed = 25;
     }
-    else{
+}
+
+function onSpawnUpdate() {
+    if (info) info = false;
+    else {
         if (animCount == 1) {
             animateInfoOpacity(0, 0.35);
         }
-
         spawn();
     }
 }
 
 async function onMoveUpdate() {
-
-    if (end) {
-        return;
-    }
+    if (end) return;
 
     if(!pause) {
         blocks.forEach(element => {
@@ -328,8 +267,8 @@ async function onMoveUpdate() {
 
 function onDead() {
     screen.appendChild(overScreen.duplicateNode());
-    let scoreOverTxtObj = new TextNode({selector: "#score_overTxt"});
-    let overTxtObj = new TextNode({selector: "#overTxt"});
+    let scoreOverTxtObj = new TextNode({ selector: "#score_overTxt" });
+    let overTxtObj = new TextNode({ selector: "#overTxt" });
     overTxtObj.getNode().firstChild.nextSibling.textContent = "OVER";
     overTxtObj.getNode().firstChild.textContent = "GAME";
     scoreOverTxtObj.textContent = `SCORE: ${score}`;
@@ -337,8 +276,8 @@ function onDead() {
 
 function onWin() {
     screen.appendChild(overScreen.duplicateNode());
-    let scoreOverTxtObj = new TextNode({selector: "#score_overTxt"});
-    let overTxtObj = new TextNode({selector: "#overTxt"});
+    let scoreOverTxtObj = new TextNode({ selector: "#score_overTxt" });
+    let overTxtObj = new TextNode({ selector: "#overTxt" });
     overTxtObj.getNode().firstChild.nextSibling.textContent = "WON!";
     overTxtObj.getNode().firstChild.textContent = "YOU";
     scoreOverTxtObj.textContent = `SCORE: ${score}`;
@@ -354,4 +293,4 @@ function onPauseEnd() {
     pause = false;
 }
 
-onStart()
+onStart();

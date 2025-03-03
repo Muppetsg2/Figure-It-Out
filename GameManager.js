@@ -1,4 +1,4 @@
-// AUTHOR: Muppetsg2
+// AUTHOR: Marceli Antosik (Muppetsg2)
 
 // Game Settings
 const horizontal_points = [178, 498, 818];

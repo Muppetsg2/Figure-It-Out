@@ -1,3 +1,5 @@
+// AUTHOR: Marceli Antosik (Muppetsg2)
+
 class ObjectContainer {
     constructor(tab){
         this.list = [...tab];

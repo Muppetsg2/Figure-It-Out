@@ -1,3 +1,5 @@
+// AUTHOR: Marceli Antosik (Muppetsg2)
+
 class Player extends GroupNode {
     constructor(obj) {
         super(obj);

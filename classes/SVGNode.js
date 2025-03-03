@@ -1,3 +1,5 @@
+// AUTHOR: Marceli Antosik (Muppetsg2)
+
 class SVGNode {
     constructor(obj) {
 		this.node = obj.selector ? document.querySelector(obj.selector) : obj.domNode;

@@ -1,3 +1,5 @@
+// AUTHOR: Marceli Antosik (Muppetsg2)
+
 class GroupNode extends SVGNode{
     notImplemented = true;
 

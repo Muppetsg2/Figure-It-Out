@@ -96,7 +96,7 @@ The game difficulty automatically adjusts based on your score:
 
 ## 👥 Credits
 
-- 🎮 **Game Developer**: Muppetsg2
+- 🎮 **Game Developer**: Marceli Antosik (Muppetsg2)
 - 🎵 **Music**: Tac0zzz1
 
 ## 📜 License

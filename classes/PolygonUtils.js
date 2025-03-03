@@ -1,3 +1,5 @@
+// AUTHOR: Marceli Antosik (Muppetsg2)
+
 class PolygonUtils {
     static calculateDimensions(pointsStr) {
         const points = pointsStr.split(' ').map(point => {

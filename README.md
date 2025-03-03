@@ -10,16 +10,16 @@ This game **increases in difficulty** the longer you play, featuring multiple mo
 
 ## 📋 Table of Contents
 
-- [🎮 Gameplay](#gameplay)
-- [📷 Screenshots](#screenshots)
-- [⌨️ Controls](#controls)
-- [🎞️ GIF Demo](#gif-demo)
-- [🕹️ Game Modes](#game-modes)
-- [🎯 How to Play](#how-to-play)
-- [🎵 Audio](#audio)
-- [🛠️ Known Issues](#known-issues)
-- [👥 Credits](#credits)
-- [📜 License](#license)
+- [🎮 Gameplay](#-gameplay)
+- [📷 Screenshots](#-screenshots)
+- [⌨️ Controls](#-controls)
+- [🎞️ GIF Demo](#-gif-demo)
+- [🕹️ Game Modes](#-game-modes)
+- [🎯 How to Play](#-how-to-play)
+- [🎵 Audio](#-audio)
+- [🛠️ Known Issues](#-known-issues)
+- [👥 Credits](#-credits)
+- [📜 License](#-license)
 
 ## 🎮 Gameplay
 

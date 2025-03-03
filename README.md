@@ -12,12 +12,12 @@ This game **increases in difficulty** the longer you play, featuring multiple mo
 
 - [🎮 Gameplay](#-gameplay)
 - [📷 Screenshots](#-screenshots)
-- [⌨️ Controls](##️⃣-controls)
-- [🎞️ GIF Demo](##️⃣-gif-demo)
-- [🕹️ Game Modes](##️⃣-game-modes)
+- [⌨️ Controls](#%EF%B8%8F-controls)
+- [🎞️ GIF Demo](#%EF%B8%8F-gif-demo)
+- [🕹️ Game Modes](#%EF%B8%8F-game-modes)
 - [🎯 How to Play](#-how-to-play)
 - [🎵 Audio](#-audio)
-- [🛠️ Known Issues](##️⃣-known-issues)
+- [🛠️ Known Issues](#%EF%B8%8F-known-issues)
 - [👥 Credits](#-credits)
 - [📜 License](#-license)
 

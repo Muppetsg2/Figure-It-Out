@@ -3,13 +3,63 @@
     <head>
         <!-- AUTHOR: Marceli Antosik (Muppetsg2) -->
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Mobile viewport: real device width, zooming disabled (GAME.svg alone cannot set this) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+        <meta name="theme-color" content="#CA224B">
         <title>Figure It Out</title>
-        <!-- GitHub Pages opens index.html by default - the game itself lives in GAME.svg -->
-        <meta http-equiv="refresh" content="0; url=GAME.svg">
-        <script>location.replace("GAME.svg");</script>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background: white;
+                touch-action: none;
+                overscroll-behavior: none;
+                -webkit-user-select: none;
+                user-select: none;
+                -webkit-text-size-adjust: 100%;
+            }
+
+            #game {
+                position: fixed;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                height: 100dvh;
+                border: 0;
+                display: block;
+            }
+        </style>
+        <script>
+            // The game itself lives in GAME.svg.
+            // Desktop: open it directly (same as before).
+            // Touch devices: embed it in this page, so the viewport settings above block zooming.
+            const isTouch = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+            if (!isTouch) {
+                location.replace("GAME.svg");
+            }
+        </script>
     </head>
     <body>
-        <a href="GAME.svg">Play Figure It Out</a>
+        <script>
+            if (isTouch) {
+                const frame = document.createElement("iframe");
+                frame.id = "game";
+                frame.title = "Figure It Out";
+                frame.src = "GAME.svg";
+                frame.setAttribute("allow", "autoplay; fullscreen");
+                frame.addEventListener("load", () => frame.contentWindow.focus());
+                document.body.appendChild(frame);
+
+                // Block zoom gestures that start outside the game frame (iOS)
+                for (const type of ["gesturestart", "gesturechange", "gestureend", "dblclick"]) {
+                    document.addEventListener(type, (event) => event.preventDefault(), { passive: false });
+                }
+                document.addEventListener("touchstart", (event) => event.preventDefault(), { passive: false });
+            }
+        </script>
+        <noscript><a href="GAME.svg">Play Figure It Out</a></noscript>
     </body>
 </html>

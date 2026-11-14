@@ -64,6 +64,12 @@ function handleSwipe(dx, dy) {
 // ---------- touch events ----------
 
 document.addEventListener("touchstart", (event) => {
+    // Cancelling touchstart stops ALL browser gestures for this touch:
+    // double-tap zoom, pinch zoom, scrolling, long-press menu, emulated mouse clicks.
+    // (touchend still fires, so starting the music on touchend keeps working)
+    event.preventDefault();
+    window.focus(); // keep keyboard/visibility focus inside the game (also when embedded in index.html)
+
     setTouchUI(true);
 
     for (const touch of event.changedTouches) {
@@ -146,3 +152,13 @@ document.addEventListener("touchcancel", (event) => {
         activeTouches.delete(touch.identifier);
     }
 });
+
+// ---------- block zooming ----------
+
+// iOS Safari: pinch zoom (non-standard gesture events)
+for (const type of ["gesturestart", "gesturechange", "gestureend"]) {
+    document.addEventListener(type, (event) => event.preventDefault(), { passive: false });
+}
+
+// Fallback: double-tap / double-click zoom
+document.addEventListener("dblclick", (event) => event.preventDefault(), { passive: false });

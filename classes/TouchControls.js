@@ -133,6 +133,7 @@ document.addEventListener("touchend", (event) => {
         }
         else if (pause) {
             if (info.handled || !isTap) continue;
+            if (isZoomed()) continue; // zoom out first (see bottom of this file)
 
             if (isInside(touch.target, "#pause_restart_btn")) {
                 restartGame();
@@ -162,3 +163,32 @@ for (const type of ["gesturestart", "gesturechange", "gestureend"]) {
 
 // Fallback: double-tap / double-click zoom
 document.addEventListener("dblclick", (event) => event.preventDefault(), { passive: false });
+
+// ---------- browsers that force zooming (Samsung Internet) ----------
+// Samsung Internet has a "Manual zoom" accessibility setting (ON by default) that
+// overrides every way a page can block zooming. A page cannot turn it off, so instead:
+//  - the game pauses as soon as the view gets zoomed in,
+//  - it cannot be resumed until the view is zoomed back out (double-tap or pinch).
+
+const gameViewport = (() => {
+    try {
+        // when embedded in index.html the zoom happens on the top page
+        return window.top.visualViewport || window.visualViewport;
+    }
+    catch (e) {
+        return window.visualViewport;
+    }
+})();
+const baseScale = gameViewport ? gameViewport.scale : 1;
+
+function isZoomed() {
+    return gameViewport !== undefined && gameViewport !== null && gameViewport.scale > baseScale * 1.05;
+}
+
+if (gameViewport) {
+    gameViewport.addEventListener("resize", () => {
+        if (isZoomed() && isPlaying()) {
+            onPause();
+        }
+    });
+}

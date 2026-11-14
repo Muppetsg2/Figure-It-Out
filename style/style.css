@@ -138,94 +138,6 @@
     animation-iteration-count: infinite;
 }
 
-#P_1 {
-    animation-delay: 0s;
-}
-
-#R_1 {
-    animation-delay: 0.05s;
-}
-
-#E_1 {
-    animation-delay: 0.1s;
-}
-
-#S_1 {
-    animation-delay: 0.15s;
-}
-
-#S_2 {
-    animation-delay: 0.2s;
-}
-
-#SPACE_1 {
-    animation-delay: 0.25s;
-}
-
-#COL_1 {
-    animation-delay: 0.3s;
-}
-
-#S_3 {
-    animation-delay: 0.35s;
-}
-
-#P_2 {
-    animation-delay: 0.4s;
-}
-
-#A_1 {
-    animation-delay: 0.45s;
-}
-
-#C {
-    animation-delay: 0.5s;
-}
-
-#E_2 {
-    animation-delay: 0.55s;
-}
-
-#COL_2 {
-    animation-delay: 0.6s;
-}
-
-#SPCAE_2 {
-    animation-delay: 0.65s;
-}
-
-#T_1 {
-    animation-delay: 0.7s;
-}
-
-#O {
-    animation-delay: 0.75s;
-}
-
-#SPACE_3 {
-    animation-delay: 0.8s;
-}
-
-#S_4 {
-    animation-delay: 0.85s;
-}
-
-#T_2 {
-    animation-delay: 0.9s;
-}
-
-#A_2 {
-    animation-delay: 0.95s;
-}
-
-#R_2 {
-    animation-delay: 1.0s;
-}
-
-#T_3 {
-    animation-delay: 1.05s;
-}
-
 @keyframes wiggleWiggle {
     20%,
     100% {
@@ -238,4 +150,88 @@
     10% {
         transform: translate(0, 0px);
     }
+}
+
+/* ---------- TOUCH / MOBILE SUPPORT ---------- */
+
+/* Block browser gestures (scroll, pinch-zoom, pull-to-refresh, double-tap zoom) */
+svg {
+    touch-action: none;
+    overscroll-behavior: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Show either keyboard or touch variant of the UI. The "touch" class is set on the root <svg> by classes/TouchControls.js */
+.touch_ui {
+    display: none;
+}
+
+svg.touch .touch_ui {
+    display: inline;
+}
+
+svg.touch .keyboard_ui {
+    display: none;
+}
+
+#startTxtTouch {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    fill: white;
+    font-size: 64px;
+}
+
+#startTxtTouch text {
+    animation-name: wiggleWiggle;
+    animation-duration: 1.25s;
+    animation-direction: alternate;
+    animation-timing-function: steps(2, end);
+    animation-iteration-count: infinite;
+}
+
+/* Pause button - visible only on touch devices while playing */
+#pause_btn {
+    display: none;
+    opacity: 0.85;
+}
+
+svg.touch.playing #pause_btn {
+    display: inline;
+}
+
+#pause_btn .hitArea {
+    fill: transparent;
+}
+
+.pauseBtnBg {
+    fill: #D9D9D9;
+}
+
+.pauseBtnBar {
+    fill: #951A38;
+}
+
+/* Restart button on the pause screen (touch) */
+.touchBtnBg {
+    fill: white;
+    fill-opacity: 0.12;
+    stroke: white;
+    stroke-width: 6px;
+}
+
+.touchBtnTxt {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    fill: white;
+    font-size: 56px;
+}
+
+.touchHintTxt {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    fill: white;
+    font-size: 56px;
 }

@@ -40,13 +40,27 @@ Below are a few screenshots highlighting the core gameplay elements.
   <img src="./images/screenshot1.png" alt="Game Screenshot showing main menu" width="200" height="300"> <img src="./images/screenshot2.png" alt="Game Screenshot showing screen with input info" width="200" height="300"> <img src="./images/screenshot3.png" alt="Game Screenshot showing gameplay" width="200" height="300">
 </div>
 
-## ⌨️ Controls
+## ⌨️ Keyboard Controls
 
 - ⬅️➡️ **Arrow Left / Right**: Move the player left or right.
 - 🔢 **1 / 2 / 3**: Change the player's shape (**1** = Box, **2** = Circle, **3** = Triangle).
 - 🎮 **Spacebar**: Start the game from the title screen.
 - ⏸️ **Escape**: Pause/Resume the game.
 - 🔄 **CTRL + R**: Reset the game after it ends or while playing.
+
+### 📱 Mobile (touch) Controls
+
+- 👆 **Tap**: Start the game, next shape during gameplay.
+- 👈👉 **Swipe Left / Right**: Move the player left or right.
+- 👆👇 **Swipe Up / Down**: Next / previous shape (Box → Circle → Triangle).
+- ⏸️ **Pause button** (top right corner): Pause the game. Tap anywhere to resume or press **RESTART**.
+- 🔄 **Tap** on the game over screen: Restart the game.
+
+The tutorial graphics switch automatically between keyboard and touch versions depending on the device you play on.
+
+## 🌐 Play Online
+
+▶️ **[Play Figure It Out on GitHub Pages](https://muppetsg2.github.io/Figure-It-Out/)**
 
 ## 🎞️ GIF Demo
 <div align="center">

@@ -15,6 +15,7 @@ let start = false;
 let info = true;
 let pause = false;
 let animCount = 0;
+let endTime = 0;
 
 // Prefabs
 const blockPrefab = new GroupNode({ selector: ".moving_block" });
@@ -77,17 +78,27 @@ document.addEventListener("keydown", (event) => {
         }
     }
     else if (!start && event.key == " ") {
-		startScreen.setAttribute("class", "hidden");
-		start = true;
-		audio.play();
+        startGame();
     }
     else if (end && event.ctrlKey && event.key == "r") {
-		document.location.reload();
+		restartGame();
     }
     else if(pause && event.key == "Escape"){
 		onPauseEnd();
     }
 });
+
+function startGame() {
+    if (start) return;
+    startScreen.setAttribute("class", "hidden");
+    start = true;
+    document.documentElement.classList.add("playing");
+    audio.play();
+}
+
+function restartGame() {
+    document.location.reload();
+}
 
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
@@ -265,7 +276,13 @@ async function onMoveUpdate() {
     setTimeout(onMoveUpdate, miliseconds)
 }
 
+function onEnd() {
+    endTime = Date.now();
+    document.documentElement.classList.remove("playing");
+}
+
 function onDead() {
+    onEnd();
     screen.appendChild(overScreen.duplicateNode());
     let scoreOverTxtObj = new TextNode({ selector: "#score_overTxt" });
     let overTxtObj = new TextNode({ selector: "#overTxt" });
@@ -275,6 +292,7 @@ function onDead() {
 }
 
 function onWin() {
+    onEnd();
     screen.appendChild(overScreen.duplicateNode());
     let scoreOverTxtObj = new TextNode({ selector: "#score_overTxt" });
     let overTxtObj = new TextNode({ selector: "#overTxt" });

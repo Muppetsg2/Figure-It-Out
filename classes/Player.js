@@ -25,6 +25,18 @@ class Player extends GroupNode {
         this.actualShape = this.node.appendChild(this.shapes[index].duplicateNode());
     }
 
+    get shapeIndex() {
+        return this.shapes.findIndex(shape => shape.getNode().nodeName == this.actualShape.nodeName);
+    }
+
+    nextShape() {
+        this.changeShape((this.shapeIndex + 1) % this.shapes.length);
+    }
+
+    previousShape() {
+        this.changeShape((this.shapeIndex + this.shapes.length - 1) % this.shapes.length);
+    }
+
     move(direction) {
         const index = this.positions.indexOf(this.x);
         let posIndex = index;

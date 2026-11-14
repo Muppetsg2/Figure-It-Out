@@ -315,7 +315,7 @@
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_21_11"/>
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_21_11" result="shape"/>
         </filter>
-        <filter id="filter3_d_14_3" x="138.336" y="151.418" width="722.245" height="308.074" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <filter id="filter3_d_14_3" x="138.336" y="151.418" width="722.245" height="350.074" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix"/>
             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
             <feOffset dy="10"/>
@@ -325,7 +325,7 @@
             <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_14_3"/>
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_14_3" result="shape"/>
         </filter>
-        <filter id="filter3_d_21_11" x="173.59" y="361.812" width="647.238" height="444.375" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <filter id="filter3_d_21_11" x="173.59" y="361.812" width="647.238" height="500.375" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix"/>
             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
             <feOffset dy="10"/>
